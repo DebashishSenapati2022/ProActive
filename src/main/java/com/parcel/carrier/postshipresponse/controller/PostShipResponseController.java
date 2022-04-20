@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.gson.Gson;
 import com.parcel.carrier.postshipresponse.dto.PaymentGatewayRequest;
 import com.parcel.carrier.postshipresponse.dto.RequestPayload;
 
@@ -22,6 +23,7 @@ public class PostShipResponseController {
 		log.info("EnableVisaMandate2019 ID from controller is {}",paymentGatewayRequest.getEnableVisaMandate2019());
 		log.info("Order ID from controller is {}",paymentGatewayRequest.getOrderId());
 		log.info("PaymentGroup ID from controller is {}",paymentGatewayRequest.getPaymentGroupId());
+		log.info("Parcel object............. :: {}", new Gson().toJson(paymentGatewayRequest));
 		
 		return "SUCCESS";
 	}
